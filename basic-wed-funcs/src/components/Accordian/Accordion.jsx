@@ -6,8 +6,6 @@ function Accordion() {
   const [selected, setSelected] = useState(null);
 
 
-  const [enableMS, setEnableMS] = useState(false);
-  const [multiple, setMultiple] = useState([]); 
 
 
 
@@ -15,32 +13,16 @@ function Accordion() {
     setSelected(getCurrentId===selected?null:getCurrentId);
   }
  
-  function handleMultiAccordian(getCurrentId) {
-    let cpyMutiple = [...multiple];
-    
-  }
 
 
   return (
     <div className="container">
-      <button
-        onClick={() => {
-          setEnableMS(!enableMS);
-        }}
-      >
-        Enable multi selection
-      </button>
       <div className="accordion">
         {data && data.length > 0 ? (
           data.map((dataItem) => (
             <div
               className="item"
-              onClick={
-                enableMS
-                  ? () => {
-                      handleMultiAccordian(dataItem.id);
-                    }
-                  : () => {
+              onClick={ () => {
                       handleSingleAccordion(dataItem.id);
                     }
               }

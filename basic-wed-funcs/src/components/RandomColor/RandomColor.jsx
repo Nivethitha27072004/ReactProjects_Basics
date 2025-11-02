@@ -40,7 +40,7 @@ function RandomColor() {
       <>
         <button
           onClick={() => {
-            setType(color);
+            setType("hex");
           }}
         >
           hex Color
@@ -52,18 +52,17 @@ function RandomColor() {
 
         <button
           onClick={() => {
-            setType(color);
+            setType("rgb");
           }}
         >
           rgb color
             </button>
             
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: "60px", color: "white", matginTop: "50px" }}><h4>{color}</h4></div>
-
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: "60px", color: "white", matginTop: "50px" }}><h4>{color}</h4></div>
         <div
           style={{ width: "100vw", height: "100vh", background: color }}
         ></div>
-        <div className="container"></div>
+       
       </>
     );
 }
